@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const mysql = require('mysql2');
 
@@ -7,10 +8,10 @@ const port = 3000;
 
 // MySQL connection configuration
 const connection = mysql.createConnection({
-  host: 'bfieq1twbcmxrf2uduv1-mysql.services.clever-cloud.com',
-  user: 'u7lxc4bve9dsddcv',
-  password: 'przsKHxT6d9C3d0sqgzl',
-  database: 'bfieq1twbcmxrf2uduv1',
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
 });
 
 // Connect to MySQL database
