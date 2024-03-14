@@ -7,6 +7,7 @@ app.use(express.json());
 const PORT = process.env.PORT || 3000;
 // MySQL connection configuration
 const connection = mysql.createConnection({
+  connectionLimit: 10,
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
