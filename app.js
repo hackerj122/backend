@@ -4,8 +4,7 @@ const mysql = require('mysql2');
 
 const app = express();
 app.use(express.json());
-const port = 3000;
-
+const PORT = process.env.PORT || 3000;
 // MySQL connection configuration
 const connection = mysql.createConnection({
   host: process.env.DB_HOST,
@@ -53,6 +52,6 @@ app.post('/login', (req, res) => {
   });
 });
 
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
